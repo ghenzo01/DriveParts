@@ -1,0 +1,94 @@
+.part-specifications {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.part-specifications .form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #0056b3;
+}
+
+.part-specifications .form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.part-specifications .form-row.single {
+  display: block;
+}
+
+.part-specifications .form-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+}
+
+.part-specifications .form-control,
+.part-specifications .form-select {
+  width: 100%;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 5px;
+}
+
+.part-specifications .form-control:focus,
+.part-specifications .form-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.part-specifications textarea {
+  resize: none;
+}
+
+.part-specifications .dropzone {
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: #e9f7ff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.part-specifications .dropzone:hover {
+  background-color: #d9eefc;
+  border-color: #0056b3;
+}
+
+.part-specifications .logo-preview img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #007bff;
+}
+
+.part-specifications .remove-logo-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.part-specifications .remove-logo-btn:hover {
+  background-color: #d93636;
+}

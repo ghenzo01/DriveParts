@@ -1,0 +1,90 @@
+.part-card-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  position: relative;
+}
+
+.part-card-content {
+  display: flex;
+  gap: 30px;
+}
+
+.part-card-left {
+  flex: 0 0 auto;
+}
+
+.part-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.part-card-right {
+  flex: 1;
+}
+
+.part-card-right h3 {
+  font-size: 1.5rem;
+  color: #0056b3;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.part-card-right p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.label {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.seller-info {
+  margin-top: 20px; 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.seller-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.seller-name {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.2;
+}
+
+.manage-button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.manage-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

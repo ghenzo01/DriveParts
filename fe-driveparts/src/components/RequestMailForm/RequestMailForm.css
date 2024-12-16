@@ -1,0 +1,59 @@
+.request-mail-form {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.request-mail-form .main-title {
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.request-mail-form .form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #0056b3;
+}
+
+.request-mail-form .form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.request-mail-form .form-row.single {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.request-mail-form .form-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+}
+
+.request-mail-form .form-control,
+.request-mail-form .form-select {
+  width: 100%;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.request-mail-form .form-control:focus,
+.request-mail-form .form-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

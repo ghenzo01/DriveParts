@@ -1,0 +1,62 @@
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999999;
+  overflow: hidden;
+}
+
+
+.loader {
+  text-align: center;
+  color: #427035;
+}
+
+
+.bounce {
+  animation: bounce 1.5s infinite;
+}
+
+
+.wheel {
+  fill: #427035;
+  animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+@keyframes bounce {
+
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}

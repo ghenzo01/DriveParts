@@ -1,0 +1,102 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  padding: 0.5rem 0.5rem;
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0.2rem 0;
+  box-sizing: border-box;
+}
+
+.search-bar-form {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 800px) {
+  .search-bar-form {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}
+
+.search-bar-form select,
+.part-id-input {
+  padding: 0.3rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: #222;
+  color: white;
+}
+
+.search-bar-form select:focus,
+.part-id-input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.part-id-input {
+  width: 120px;
+}
+
+.part-id-input:disabled {
+  background-color: #444;
+  color: #ccc;
+}
+
+.btn-filter {
+  padding: 0.3rem 0.8rem;
+  background-color: #ffd700;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-filter:hover {
+  background-color: #ffbf00;
+}
+
+.btn-filter:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.btn-reset {
+  padding: 0.3rem 0.8rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+  background-color: #666;
+}
+
+.btn-reset:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+select:disabled {
+  background-color: #444;
+  color: #aaa;
+  cursor: not-allowed;
+}

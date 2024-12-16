@@ -1,0 +1,57 @@
+
+.logo {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover .logo {
+  transform: scale(1.1);
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+  content: none !important;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: outline 0.2s ease;
+}
+
+.user-dropdown-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover .user-avatar {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.nav-link {
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ccc !important;
+  box-shadow: 0 0 6px 1px rgba(255, 215, 0, 0.7);
+  border-radius: 5px;
+}
+
+.text-warning {
+  color: #ffd700 !important;
+}
+
+.text-warning:hover {
+  color: #ffbf00 !important;
+  box-shadow: 0 0 6px 1px rgba(255, 215, 0, 0.9);
+  border-radius: 5px;
+}

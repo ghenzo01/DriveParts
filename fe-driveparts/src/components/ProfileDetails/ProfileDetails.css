@@ -1,0 +1,123 @@
+.profile-main-title {
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-details-container {
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.profile-seller-info-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+  padding: 20px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.profile-seller-info-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-seller-logo-wrap {
+  flex: 0 0 auto;
+}
+
+.profile-seller-logo-large {
+  display: block;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+  max-width: 300px;
+}
+
+.profile-seller-data-wrap {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+.profile-seller-name-line {
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.profile-name-label {
+  font-size: 2.6rem;
+  color: #0056b3;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.profile-name-value {
+  font-size: 2.6rem;
+  color: #333;
+}
+
+.profile-pairs-container {
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-auto-rows: auto;
+  gap: 8px 10px;
+}
+
+.profile-label {
+  font-weight: bold;
+  color: #0056b3;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.profile-value {
+  color: #333;
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.profile-multiline-description {
+  grid-column: 1 / span 2;
+  margin-top: 0;
+}
+
+.profile-website-link {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-website-link:hover {
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+.profile-buttons-container {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.profile-btn-edit {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-btn-edit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

@@ -1,0 +1,66 @@
+.home-container {
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.promotional-message {
+  font-size: 1rem;
+  margin: 20px 0;
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.product-types {
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.product-types h3 {
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.product-types ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-types li {
+  padding: 5px 0;
+}
+
+.call-to-action {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.cta-link {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.cta-link:hover {
+  color: #003f7f;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
