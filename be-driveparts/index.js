@@ -7,6 +7,7 @@ const cors = require('cors')
 const usersRoutes = require('./routes/usersRoutes')
 const partsRoutes = require('./routes/partsRoutes')
 const emailSender = require('./routes/eMailSender')
+const recaptchaRoutes = require('./routes/reCaptchaRoutes')
 
 const genericErrorHandler = require('./middlewares/genericErrorHandler')
 
@@ -34,6 +35,8 @@ server.use('/users', usersRoutes)
 server.use('/parts', partsRoutes)
 
 server.use('/email', emailSender)
+
+server.use('/recaptcha', recaptchaRoutes)
 
 server.use(genericErrorHandler)
 

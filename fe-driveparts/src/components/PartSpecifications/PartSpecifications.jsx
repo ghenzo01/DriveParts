@@ -1,12 +1,12 @@
-import React from 'react';
-import './PartSpecifications.css';
+import React from 'react'
+import './PartSpecifications.css'
 
 const PartSpecifications = ({ specs, onChange, onDrop, onRemoveImage }) => {
-  const conditions = ['New', 'Used', 'Reconditioned / Overhauled'];
+  const conditions = ['New', 'Used', 'Reconditioned / Overhauled']
 
   const handleChange = (field, value) => {
-    onChange(field, value);
-  };
+    onChange(field, value)
+  }
 
   return (
     <div className="part-specifications">
@@ -92,7 +92,7 @@ const PartSpecifications = ({ specs, onChange, onDrop, onRemoveImage }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PartSpecifications;
+export default PartSpecifications

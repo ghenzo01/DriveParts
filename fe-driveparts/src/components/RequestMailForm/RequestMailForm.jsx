@@ -174,7 +174,7 @@ ${message}
 
   return (
     <div className="request-mail-form">
-      <h1 className="main-title">Request</h1> {/* Titolo con stessa classe di All Parts e My Parts */}
+      <h1 className="main-title">Request</h1>
       <h2 className="form-title">Didn't find the article you were looking for?</h2>
       <p style={{ textAlign: 'center', marginBottom: '20px' }}>
         Enter your vehicle data and contact all of our registered sellers to find what you need!<br />

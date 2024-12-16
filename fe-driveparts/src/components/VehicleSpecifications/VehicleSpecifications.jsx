@@ -1,23 +1,23 @@
-import React from 'react';
-import './VehicleSpecifications.css';
-import BrandSelector from '../BrandSelector/BrandSelector';
-import ModelSelector from '../ModelSelector/ModelSelector';
-import ArticleSelector from '../ArticleSelector/ArticleSelector';
+import React from 'react'
+import './VehicleSpecifications.css'
+import BrandSelector from '../BrandSelector/BrandSelector'
+import ModelSelector from '../ModelSelector/ModelSelector'
+import ArticleSelector from '../ArticleSelector/ArticleSelector'
 
 const VehicleSpecifications = ({ specs, onChange, title }) => {
   const handleChange = (field, value) => {
-    onChange(field, value);
-  };
-
-  const years = [];
-  for (let y = 1970; y <= 2025; y++) {
-    years.push(y.toString());
+    onChange(field, value)
   }
 
-  const transmissions = ['Manual 4-speed', 'Manual 5-speed', 'Manual 6-speed', 'Automatic', 'Semi-Automatic'];
-  const fuelTypes = ['Petrol', 'Diesel', 'Petrol-Methane', 'Petrol-LPG', 'Petrol-Electric', 'Electric'];
-  const bodyTypes = ['Sedan', 'Station Wagon', 'Cabrio-Coupè', 'Minivan', 'Multipurpose'];
-  const doorOptions = ['2', '3', '4', '5'];
+  const years = []
+  for (let y = 1970; y <= 2025; y++) {
+    years.push(y.toString())
+  }
+
+  const transmissions = ['Manual 4-speed', 'Manual 5-speed', 'Manual 6-speed', 'Automatic', 'Semi-Automatic']
+  const fuelTypes = ['Petrol', 'Diesel', 'Petrol-Methane', 'Petrol-LPG', 'Petrol-Electric', 'Electric']
+  const bodyTypes = ['Sedan', 'Station Wagon', 'Cabrio-Coupè', 'Minivan', 'Multipurpose']
+  const doorOptions = ['2', '3', '4', '5']
 
   return (
     <div className="vehicle-specifications">
@@ -146,7 +146,7 @@ const VehicleSpecifications = ({ specs, onChange, title }) => {
         </label>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VehicleSpecifications;
+export default VehicleSpecifications

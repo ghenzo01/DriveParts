@@ -1,17 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import { UserContext } from '../../contexts/UserContext';
-import { getPartDetails, createPart, updatePart } from '../../services/partService';
-import VehicleSpecifications from '../VehicleSpecifications/VehicleSpecifications';
-import PartSpecifications from '../PartSpecifications/PartSpecifications';
-import './Add_EditPart.css';
+import React, { useState, useContext, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import { UserContext } from '../../contexts/UserContext'
+import { getPartDetails, createPart, updatePart } from '../../services/partService'
+import VehicleSpecifications from '../VehicleSpecifications/VehicleSpecifications'
+import PartSpecifications from '../PartSpecifications/PartSpecifications'
+import './Add_EditPart.css'
 
 const Add_EditPart = ({ mode }) => {
-  const { token } = useContext(UserContext);
-  const navigate = useNavigate();
-  const { id } = useParams();
+  const { token } = useContext(UserContext)
+  const navigate = useNavigate()
+  const { id } = useParams()
 
   const [vehicleSpecs, setVehicleSpecs] = useState({
     brand: '',
@@ -24,7 +24,7 @@ const Add_EditPart = ({ mode }) => {
     transmission: '',
     bodyType: '',
     doors: '',
-  });
+  })
 
   const [partSpecs, setPartSpecs] = useState({
     condition: '',
@@ -32,17 +32,17 @@ const Add_EditPart = ({ mode }) => {
     manufacturerCode: '',
     description: '',
     image: null,
-  });
+  })
 
-  const [partImageFile, setPartImageFile] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [partImageFile, setPartImageFile] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     const loadPart = async () => {
       if (mode === 'edit' && id) {
         try {
-          const data = await getPartDetails(id, token);
-          const p = data.part;
+          const data = await getPartDetails(id, token)
+          const p = data.part
           setVehicleSpecs({
             brand: p.brand,
             model: p.model,
@@ -54,7 +54,7 @@ const Add_EditPart = ({ mode }) => {
             transmission: p.transmission,
             bodyType: p.bodyType,
             doors: p.doors,
-          });
+          })
 
           setPartSpecs({
             condition: p.condition,
@@ -62,9 +62,9 @@ const Add_EditPart = ({ mode }) => {
             manufacturerCode: p.manufacturerCode,
             description: p.description,
             image: p.image || null,
-          });
+          })
         } catch (error) {
-          console.error('Failed to fetch part details:', error);
+          console.error('Failed to fetch part details:', error)
           const errorMessage = error.message || ''
           if (errorMessage.toLowerCase().includes('token')) {
             Swal.fire({
@@ -76,57 +76,57 @@ const Add_EditPart = ({ mode }) => {
               navigate('/login')
             })
           } else {
-            Swal.fire('Error', errorMessage || 'Failed to load part details', 'error');
+            Swal.fire('Error', errorMessage || 'Failed to load part details', 'error')
           }
         }
       }
-    };
+    }
     loadPart()
-  }, [mode, id, token, navigate]);
+  }, [mode, id, token, navigate])
 
   const handleVehicleChange = (field, value) => {
-    setVehicleSpecs((prev) => ({ ...prev, [field]: value }));
-  };
+    setVehicleSpecs((prev) => ({ ...prev, [field]: value }))
+  }
 
   const handlePartChange = (field, value) => {
-    setPartSpecs((prev) => ({ ...prev, [field]: value }));
-  };
+    setPartSpecs((prev) => ({ ...prev, [field]: value }))
+  }
 
   const onDropPartImage = async (files) => {
-    const file = files[0];
+    const file = files[0]
     if (file && (file.type === 'image/png' || file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/webp')) {
-      setPartImageFile(file);
-      const reader = new FileReader();
+      setPartImageFile(file)
+      const reader = new FileReader()
       reader.onloadend = () => {
-        handlePartChange('image', reader.result);
-      };
-      reader.readAsDataURL(file);
+        handlePartChange('image', reader.result)
+      }
+      reader.readAsDataURL(file)
     } else {
-      Swal.fire('Error', 'Only PNG, JPG, JPEG and WEBP image files are allowed!', 'error');
+      Swal.fire('Error', 'Only PNG, JPG, JPEG and WEBP image files are allowed!', 'error')
     }
-  };
+  }
 
   const handleRemoveImage = () => {
-    setPartImageFile(null);
-    handlePartChange('image', null);
-  };
+    setPartImageFile(null)
+    handlePartChange('image', null)
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (
       Object.values(vehicleSpecs).some(v => !v) ||
       Object.values(partSpecs).some(v => v === '' || v === null)
     ) {
-      Swal.fire('Error', 'All fields are required.', 'error');
-      return;
+      Swal.fire('Error', 'All fields are required.', 'error')
+      return
     }
 
     const confirmMessage = mode === 'add'
       ? 'Are you sure you want to add this part?'
-      : 'Are you sure you want to save the changes?';
+      : 'Are you sure you want to save the changes?'
 
-    const confirmButtonText = mode === 'add' ? 'Yes' : 'Confirm changes';
+    const confirmButtonText = mode === 'add' ? 'Yes' : 'Confirm changes'
 
     const result = await Swal.fire({
       title: 'Confirmation',
@@ -136,11 +136,11 @@ const Add_EditPart = ({ mode }) => {
       confirmButtonColor: '#007bff',
       cancelButtonColor: '#d33',
       confirmButtonText: confirmButtonText,
-    });
+    })
 
-    if (!result.isConfirmed) return;
+    if (!result.isConfirmed) return
 
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
     try {
       const partData = {
@@ -148,20 +148,20 @@ const Add_EditPart = ({ mode }) => {
         ...partSpecs,
         image: null,
         price: parseFloat(partSpecs.price)
-      };
-
-      let response;
-      if (mode === 'add') {
-        response = await createPart(partData, token);
-      } else {
-        response = await updatePart(id, partData, token);
       }
 
-      const partId = mode === 'add' ? response.part._id : id;
+      let response
+      if (mode === 'add') {
+        response = await createPart(partData, token)
+      } else {
+        response = await updatePart(id, partData, token)
+      }
+
+      const partId = mode === 'add' ? response.part._id : id
 
       if (partImageFile) {
-        const formData = new FormData();
-        formData.append('image', partImageFile);
+        const formData = new FormData()
+        formData.append('image', partImageFile)
 
         const uploadResponse = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/parts/uploadImage/${partId}`, {
           method: 'POST',
@@ -169,17 +169,17 @@ const Add_EditPart = ({ mode }) => {
           headers: {
             'authorization': token,
           },
-        });
+        })
 
         if (!uploadResponse.ok) {
-          const errorData = await uploadResponse.json();
-          throw new Error(errorData.message || 'Failed to upload part image');
+          const errorData = await uploadResponse.json()
+          throw new Error(errorData.message || 'Failed to upload part image')
         }
 
-        await uploadResponse.json();
+        await uploadResponse.json()
       }
 
-      setIsSubmitting(false);
+      setIsSubmitting(false)
 
       if (mode === 'add') {
         Swal.fire({
@@ -199,25 +199,25 @@ const Add_EditPart = ({ mode }) => {
               manufacturerCode: '',
               description: '',
               image: null,
-            });
-            setPartImageFile(null);
+            })
+            setPartImageFile(null)
           } else if (actionResult.isDenied) {
-            navigate(`/part-details/${partId}`);
+            navigate(`/part-details/${partId}`)
           } else {
-            navigate('/my-parts');
+            navigate('/my-parts')
           }
-        });
+        })
       } else {
         Swal.fire('Success', 'Part updated successfully!', 'success')
           .then(() => {
-            navigate(`/part-details/${partId}`);
-          });
+            navigate(`/part-details/${partId}`)
+          })
       }
 
     } catch (error) {
       if (error.errors && Array.isArray(error.errors)) {
-        const errorMessages = error.errors.join('<br>');
-        Swal.fire('Error', errorMessages, 'error');
+        const errorMessages = error.errors.join('<br>')
+        Swal.fire('Error', errorMessages, 'error')
       } else {
         const errorMessage = error.message || 'Something went wrong'
         if (errorMessage.toLowerCase().includes('token')) {
@@ -230,12 +230,12 @@ const Add_EditPart = ({ mode }) => {
             navigate('/login')
           })
         } else {
-          Swal.fire('Error', errorMessage, 'error');
+          Swal.fire('Error', errorMessage, 'error')
         }
       }
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   const handleQuickFill = () => {
     setVehicleSpecs({
@@ -249,7 +249,7 @@ const Add_EditPart = ({ mode }) => {
       transmission: 'Manual 5-speed',
       bodyType: 'Sedan',
       doors: '4',
-    });
+    })
 
     setPartSpecs({
       condition: 'Used',
@@ -257,8 +257,8 @@ const Add_EditPart = ({ mode }) => {
       manufacturerCode: 'ENG123',
       description: 'Working engine in good condition, tested and verified.',
       image: null,
-    });
-  };
+    })
+  }
 
   return (
     <div className="add-edit-part-container">
@@ -290,7 +290,7 @@ const Add_EditPart = ({ mode }) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Add_EditPart;
+export default Add_EditPart
